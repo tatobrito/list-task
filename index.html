@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Tasks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900 text-gray-200 p-8">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-4xl font-bold mb-8 text-center text-purple-400">List Tasks</h1>
+
+        <div class="fixed bottom-8 right-8 bg-gray-800 p-6 rounded-lg shadow-lg z-50">
+            <h2 class="text-xl font-semibold mb-4">Add New Task</h2>
+            <form id="taskForm" class="space-y-4">
+                <div>
+                    <label for="taskName" class="block text-sm font-medium">Task Name</label>
+                    <input type="text" id="taskName"
+                        class="mt-1 block w-full border border-purple-500 bg-gray-700 rounded-md shadow-sm p-2 text-gray-200"
+                        placeholder="Enter task name">
+                </div>
+
+
+                <div>
+                    <label for="taskStatus" class="block text-sm font-medium">Status</label>
+                    <select id="taskStatus"
+                        class="mt-1 block w-full border border-purple-500 bg-gray-700 rounded-md shadow-sm p-2 text-gray-200">
+                        <option value="bug">Bug</option>
+                        <option value="refactoring">Refactoring</option>
+                        <option value="addition">Addition</option>
+                        <option value="removal">Removal</option>
+                    </select>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-md">Add
+                    Task</button>
+            </form>
+        </div>
+
+        <div class="mt-8 text-center">
+            <button id="generateReport"
+                class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-md">
+                Gerar Relatório
+            </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md w-full">
+                <h2 class="text-xl font-semibold mb-4 text-purple-400 flex items-center">
+                    <span class="material-icons mr-2">new_releases</span>
+                    New Tasks
+                </h2>
+                <ul id="taskList" class="space-y-4"></ul>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md w-full">
+                <h2 class="text-xl font-semibold mb-4 text-purple-400 flex items-center">
+                    <span class="material-icons mr-2">hourglass_empty</span>
+                    In Progress Tasks
+                </h2>
+                <ul id="inProgressList" class="space-y-4"></ul>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md w-full">
+                <h2 class="text-xl font-semibold mb-4 text-purple-400 flex items-center">
+                    <span class="material-icons mr-2">check_circle</span>
+                    Completed Tasks
+                </h2>
+                <ul id="completedList" class="space-y-4"></ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
